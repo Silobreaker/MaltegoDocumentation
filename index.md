@@ -57,7 +57,7 @@ These transforms will take __any__ type of entity as input.
 Finds @usernames that are associated with the seed entities. These are _usually_ Twitter-handles but can be from other services that use a similar naming system.
 
 #### To Countries
-> Any &rarr; Countries returns `maltego.Country`
+> Any &rarr; Countries returns `silobreaker.Username` which uses base entity `maltego.Alias`
 
 > Find related Countries
 
