@@ -35,15 +35,13 @@ If you have a license that includes Maltego access, Silobreaker will provide the
 
 Some of our transforms uses **lists** from Silobreaker. For these transforms to work, the API key must belong to an account with the following Silobreaker lists (check availability under My Lists in Silobreaker Premium):
 
-* Attack Types
-* Hacker OPs
-* Malicious IPs
+* Hacktivist Operations
 
 ## Association/relation Transforms
 
 Silobreaker indexes millions of documents and searches these to find mentions of _entities_. Our Maltego transforms use our API to find entities that are related to your input. An entity is _related_ to another when mentioned in the same context. If you need more information about how this relation was extracted, you can [investigate the relation](#investigating-relations).
 
-### General Transfomrs 
+### General Transforms
 
 These transforms will take __any__ type of entity as input.
 
@@ -144,10 +142,10 @@ A email domain is attached to an email address and differs from domain in that i
 
 Eg. `https://www.facebook.com/example/page/b.0120201030120.01230123010231.012301230/` or `http://t.co/123456abc`.
 
-#### Pastes
+#### Related Pastes
 > Any &rarr; Pastes returns `silobreaker.Document`
 
-> Find pastes from Pastebin that are related to the seed
+> Find related Pastes
 
 Returns the pastes that are the most related to your seed. The document contains URL to original paste on pastebin.com.
 
@@ -178,18 +176,16 @@ This returns known malware by their names, often given by the security company t
 #### Malicious IPs
 > Any &rarr; Malicious IPs returns `maltego.IPv4Address`
 
-> Finds related malicious IP-addresses on Silobreaker
+> Find IP addresses related to various malicious activity e.g., Malware or Threat Actors
 
-Silobreaker maintains lists of IPs that have been reported as _Malicous_. This will let you find Malicious IPs that are associated with the seed.
-
-This finds _Malicous_ _IPs_ that are listed as such in Silobreaker's internal lists.
+This will let you find IPs which are associated with different Threat Actors and Malware. They may not necessarily be _malicious_ IP addresses, but they will be contextualized by malicious activity.
 
 #### Attack Types
 > Any &rarr; Attack Types returns `maltego.Phrase`
 
 > Find related Attack Types, eg. 'Bootkit' or 'HTML-injection'
 
-Silobreaker maintains lists of attack types, this finds the Attack Types which is most frequently mentioned in association with the seed.
+This finds the Attack Types which are most frequently mentioned in association with the seed.
 
 #### Threat Actor
 > Any &rarr; Threat Actor returns `silobreaker.ThreatActor`
@@ -203,7 +199,7 @@ Threat Actor is a person or a group of individuals that poses a cyber security t
 #### Hacker Ops
 > Any &rarr; Hacker Ops returns Any
 
-> Find Hacker Operations or 'Ops' that are related to your seed
+> Find related cyber entities from the "Hacktivist Operations" list in SB.
 
 Hacker Operation or 'Ops' are joint efforts or rushes to attack specific targets; eg. [Operation Antisec](https://en.wikipedia.org/wiki/Operation_AntiSec). Silobreaker automatically identifies and tracks these Operations. This transform allows you to find operations that are related to the seed.
 
@@ -249,7 +245,7 @@ Finds world regions that are _associated_ with the seed entities.
 #### Matching Entities
 > Any &rarr; returns Any
 
-> Finds entities with names or aliases that matches the seed
+> Find matching SB entities.
 
 This special transform makes a general search to find Entities that match your
 seed. This only returns Entities with name or alias that __match__ your seed,
@@ -268,9 +264,17 @@ Takes any type of entity as seed and outputs the most related entities, across a
 #### Related Documents
 > Any &rarr; Documents returns `silobreaker.Document`
 
-> Find documents that are related to the seed
+> Find related Documents
 
 Returns the documents that are the most related to your seed. The returned documents contains the URL to the original document on source website as well as Silobreaker URL for further analysis. The documents also include a detail view with the title and teaser.
+
+#### Related Publications
+
+> Any &rarr; returns `silobreaker.Publication`
+
+> Find related Publications
+
+Returns the Publications that are related to the input. The Properties of the returned Publications will include its own Item ID in Silobreaker as well as the Item ID of its Parent.
 
 ## Investigating Relations
 
