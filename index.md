@@ -142,14 +142,6 @@ A email domain is attached to an email address and differs from domain in that i
 
 Eg. `https://www.facebook.com/example/page/b.0120201030120.01230123010231.012301230/` or `http://t.co/123456abc`.
 
-#### Related Pastes
-> Any &rarr; Pastes returns `silobreaker.Document`
-
-> Find related Pastes
-
-Returns the pastes that are the most related to your seed. The document contains URL to original paste on pastebin.com.
-
-
 #### Vulnerabilities
 > Any &rarr; CVE-identifiers returns `silobreaker.Vulnerability`
 
@@ -267,6 +259,13 @@ Takes any type of entity as seed and outputs the most related entities, across a
 > Find related Documents
 
 Returns the documents that are the most related to your seed. The returned documents contains the URL to the original document on source website as well as Silobreaker URL for further analysis. The documents also include a detail view with the title and teaser.
+
+#### Related Pastes
+> Any &rarr; Pastes returns `silobreaker.Document`
+
+> Find related Pastes
+
+Returns the pastes that are the most related to your seed. The document contains a URL to the original paste site.
 
 #### Related Publications
 
