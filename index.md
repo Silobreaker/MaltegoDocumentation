@@ -221,7 +221,28 @@ Find countries that are associated with the seed entities. These countries are n
 
 > Find related Cities
 
-Finds cities that are _associated_ with the seed entities. This _association_ is based on the fact that the seed and the Cities are frequently mentioned in the same context, in the same documents - not necessarily any actual origin or location. 
+Finds cities that are _associated_ with the seed entities. This _association_ is based on the fact that the seed and the cities are frequently mentioned in the same context, in the same documents - not necessarily any actual origin or location. 
+
+#### Provinces 
+> Any &rarr; Provinces returns `silobreaker.Province`
+
+> Find related Provinces 
+
+Finds provinces that are _associated_ with the seed entities. 
+
+#### Regions 
+> Any &rarr; Regions returns `silobreaker.Region`
+
+> Find related Regions 
+
+Finds regions that are _associated_ with the seed entities. 
+
+#### World Regions 
+> Any &rarr; World Regions returns `silobreaker.WorldRegion`
+
+> Find related World Regions 
+
+Finds world regions that are _associated_ with the seed entities. 
 
 ### Search Transforms
 
