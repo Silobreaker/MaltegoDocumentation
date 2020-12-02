@@ -27,8 +27,6 @@ If you have a license that includes Maltego access, Silobreaker will provide the
 4. Navigate through the short installation process.
 5. Still on the _Transform Hub_, press the now displayed `settings`-button for Silobreaker.
 6. This will show a dialog where you will have to paste your own API key.   
-![](https://i.gyazo.com/197887dd031cc549dfe9c961f7025a4d.png)   
-    This screen can also be accessed from the transform-picker.
 7. You're now ready to use all of the Silobreaker transforms.
   
 # Using the Silobreaker transforms in Maltego
@@ -135,7 +133,7 @@ Returns people that are frequently mentioned in the same context as the seed.
 
 Find phrases that are _keyphrases_ within Silobreaker. _Keyphrases_ in Silobreaker are words or phrases that are key to the content of the document. 
 
-![to-keyphrase](images/to-keyphrase.png)
+![keyphrases](images/keyphrases.png)
 
 #### IPv4s
 > Any &rarr; IPv4-addresses returns `maltego.IPv4Address`
@@ -202,7 +200,7 @@ Silobreaker automatically identifies strings that matches the length and content
 
 This returns known malware by their names, often given by the security company that discovers them. 
 
-![to-malware](images/to-malware.png)
+![malware](images/malware.png)
 
 #### Malicious IPs
 > Any &rarr; Malicious IPs returns `maltego.IPv4Address`
@@ -227,7 +225,7 @@ Silobreaker maintains lists of attack types, this finds the Attack Types which i
 
 Threat Actor is a person or a group of individuals that poses a cyber security threat, such as a hacktivist groups or state sponsored hackers. 
 
-  ![to-threat-actor](images/to-threat-actor.png)
+  ![threat-actor](images/threatactors.png)
 
 #### Hacker Ops
 > Any &rarr; Hacker Ops returns Any
@@ -255,30 +253,24 @@ entity "list:CVE2014".
 
 > Use on entities created by Silobreaker Transforms. Will create links to evidence for said transform
 
-This special transform is used to investigate relations. If you have used any of the _To [...]_ transforms on a Silobreaker entity to find related entities you can use the _Document Evidence for Link_ on the children to find documents that outline the relationship between that child and it's seed.
+This special transform is used to investigate relations. If you have used any of the entity transforms on a Silobreaker entity to find related entities you can use the _[SB] Document Evidence For Link_ on the children to find documents that outline the relationship between that child and it's seed.
 
-**Note**: You can only find evidence documents for transforms that was performed on a Silobreaker entity. Any entity returned by another Silobreaker transform is a Silobreaker entity. 
+1. Insert an entity and use any of the Silobreaker entity transforms to find related entities.
 
-1. Ensure the **initial entity** is a Silobreaker entity. If you want to use your input as initial entity, then perform [Search Entity](#search-entities) on your phrase.
-
-    ![search-entities](images/search-entities.png)
+    ![companies](images/companies.png)
   
-2. Use any of the Silobreaker  `To [...]` transforms to find related entities.
+  _**[SB] Companies** used on **Derusbi**_.
 
-    ![search-entities-to-company](images/search-entities-to-company.png)
-  
-  _**To Companies** used on **Derusbi**_.
+2. On any of the generated child nodes, perform the _[SB] Document Evidence For Link_ transform.
+3. The children that are generated are `silobreaker.Documents` containing url's to the documents that generated this relation on Silobreaker.
 
-3. On any of the generated child nodes, perform the _Document Evidence for Link_ transform.
-4. The children that are generated are `silobreaker.Documents` containing url's to the documents that generated this relation on Silobreaker.
-
-    ![document-evidence](images/document-evidence.png)
+    ![document-evidence-for-links](images/documentevidenceforlink.png)
   
   _So these are the original documents where the relationship between **Derusbi** and **Microsoft Corporation** is established._
 
-### Document Evidence for Link (Including pastes)
+### Document Evidence For Link (Including pastes)
 > Any Silobreaker Entity &rarr; Link to Evidence `silobreaker.Document`
 
 > Use on entities created by Silobreaker Transforms. Will create links to evidence for said transform
 
-Same as `Document Evidence for Link` including paste results.
+Same as `Document Evidence For Link` including paste results.
