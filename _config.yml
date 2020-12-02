@@ -1,1 +1,7 @@
-theme: jekyll-theme-minimal
+#Jekyll configs
+title: Silobreaker Maltego Documentation
+name: Silobreaker Maltego Documentation
+description: User guide for Silobreaker transforms in Maltego
+url: "https://silobreaker.github.io/MaltegoDocumentation"
+theme: jekyll-theme-slate
+markdown: CommonMarkGhPages
