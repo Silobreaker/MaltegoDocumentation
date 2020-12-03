@@ -295,7 +295,7 @@ This special transform is used to investigate relations. If you have used any of
 
     ![document-evidence-for-links](images/documentevidenceforlink.png)
   
-  _So these are the original documents where the relationship between **Derusbi** and **Microsoft Corporation** is established._
+  _So these are the original documents where the relationship between **Derusbi** and **Cisco Systems Inc** is established._
 
 ### Document Evidence For Link (Including pastes)
 > Any Silobreaker Entity &rarr; Link to Evidence `silobreaker.Document`
