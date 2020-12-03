@@ -37,6 +37,9 @@ Some of our transforms uses **lists** from Silobreaker. For these transforms to 
 
 * Hacktivist Operations
 
+### Entities
+Installing Silobreaker transforms also includes a custom entity set. Our transforms can return both Maltego and Silobreaker entities depending on the transform being used. Maltego entities are used when the returned entity type exists in both Maltego and Silobreaker. Otherwise, a Silobreaker custom entity will be returned. In both cases the returned entity will have a Silobreaker icon. 
+
 ## Association/relation Transforms
 
 Silobreaker indexes millions of documents and searches these to find mentions of _entities_. Our Maltego transforms use our API to find entities that are related to your input. An entity is _related_ to another when mentioned in the same context. If you need more information about how this relation was extracted, you can [investigate the relation](#investigating-relations).
