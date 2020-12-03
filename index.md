@@ -38,7 +38,7 @@ Some of our transforms uses **lists** from Silobreaker. For these transforms to 
 * Hacktivist Operations
 
 ### Entities
-Installing Silobreaker transforms also includes a custom entity set. Our transforms can return both Maltego and Silobreaker entities depending on the transform being used. Maltego entities are used when the returned entity type exists in both Maltego and Silobreaker. Otherwise, a Silobreaker custom entity will be returned. In both cases the returned entity will have a Silobreaker icon. Visit our [user guide](https://my.silobreaker.com/Help-v2/basics/entities/#entity-types) to read more about our entities <sup id="f1">[1](#footnote1)</sup>.
+Installing Silobreaker transforms also includes a custom entity set. Our transforms can return both Maltego and Silobreaker entities depending on the transform being used. Maltego entities are used when the returned entity type exists in both Maltego and Silobreaker. Otherwise, a Silobreaker custom entity will be returned. In both cases the returned entity will have a Silobreaker icon. Visit our [user guide](https://my.silobreaker.com/Help-v2/basics/entities/#entity-types) to read more about our entities [^1].
 
 ## Association/relation Transforms
 
@@ -308,4 +308,4 @@ This special transform is used to investigate relations. If you have used any of
 Same as `Document Evidence For Link` including paste results.
 
 ___
-<b id="footnote1">1</b> You must have a Silobreaker user account to view the user guide. [↩](#f1)
+[^1]: You must have a Silobreaker user account to view the user guide.

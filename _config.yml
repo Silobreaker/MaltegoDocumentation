@@ -5,3 +5,5 @@ description: User guide for Silobreaker transforms in Maltego
 url: "https://silobreaker.github.io/MaltegoDocumentation"
 theme: jekyll-theme-slate
 markdown: CommonMarkGhPages
+commonmark:
+  options: ["FOOTNOTES"]
