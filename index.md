@@ -261,7 +261,7 @@ pull entities from a list you have access to by prefixing the list name with
 entity "list:CVE2014"
 
 ### Related Entities
-> Any &rarr; returns Any Silobreaker type
+> Any &rarr; any Silobreaker entity
 
 > Find related Entities of any type
 
