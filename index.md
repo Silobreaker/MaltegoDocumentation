@@ -199,7 +199,7 @@ Threat Actor is a person or a group of individuals that poses a cyber security t
   ![threat-actor](images/threatactors.png)
 
 ### Hacker Ops
-> Any &rarr; Any Silobreaker type
+> Any &rarr; Any Silobreaker entity
 
 > Find related cyber entities from the "Hacktivist Operations" list in SB.
 
@@ -249,7 +249,7 @@ Finds world regions that are associated with the input entities.
 These transforms are included with the _**Search**_ transform set.
 
 ### Matching Entities
-> Any &rarr; Any Silobreaker type
+> Any &rarr; Any Silobreaker entity
 
 > Find matching SB entities.
 
@@ -261,7 +261,7 @@ pull entities from a list you have access to by prefixing the list name with
 entity "list:CVE2014"
 
 ### Related Entities
-> Any &rarr; any Silobreaker entity
+> Any &rarr; Any Silobreaker entity
 
 > Find related Entities of any type
 
