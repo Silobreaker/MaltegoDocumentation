@@ -316,20 +316,22 @@ This special transform is used to investigate relations. If you have used any of
 
     ![companies](images/companies.png)
   
-    _**[SB] Companies** used on **Derusbi**_.
+    <sub>_**[SB] Companies** used on **Derusbi**_.</sub>
 
 2. On any of the generated child nodes, perform the _[SB] Document Evidence For Link_ transform.
 3. The children that are generated are `silobreaker.Document` items.
 
     ![document-evidence-for-links](images/documentevidenceforlink.png)
   
-    _These are the original documents where the relationship between **Derusbi** and **Cisco Systems Inc** is established._
+    <sub>_These are the original documents where the relationship between **Derusbi** and **Cisco Systems Inc** is established._</sub>
 
 #### Document Info
 
 You can also inspect the _**Detail View**_ (located on the right hand side of the Maltego application) when focused on a document.
 
 ![detail-view](images/detailview.png)
+
+<sub>_**Document Info displayed above is evidence for Cisco Systems Inc (pictured in the previous image).**_</sub>
 
 The detail view provides you with general information e.g., _**Incoming**_ and _**Outgoing**_ relationships for the entity or entites selected on the canvas. The detail view will also contain a _**Document Info**_ section for `silobreaker.Document` items. This section is made up of 3 main components:
 
