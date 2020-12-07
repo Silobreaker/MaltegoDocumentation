@@ -150,7 +150,7 @@ A email domain is attached to an email address and differs from domain in that i
 
 > Finds related URLs. Includes the entire path mentioned
 
-Eg. `https://www.facebook.com/example/page/b.0120201030120.01230123010231.012301230/` or `http://t.co/123456abc`.
+E.g., `https://www.facebook.com/example/page` or `http://t.co/123456abc`.
 
 ### Vulnerabilities
 > Any &rarr; `silobreaker.Vulnerability`
