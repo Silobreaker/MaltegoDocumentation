@@ -77,15 +77,21 @@ Returns people that are frequently mentioned in the same context as the input en
 
 > Find related companies
 
+Returns companies that are frequently mentioned in the same context as the input entity.
+
 ### Organizations
 > Any &rarr; `maltego.Organization`
 
 > Find related organizations
 
+Returns organizations that are frequently mentioned in the same context as the input entity.
+
 ### Products
 > Any &rarr; `silobreaker.Product`
 
 > Find related products
+
+Returns products that are frequently mentioned in the same context as the input entity.
 
 ## Cyber Transforms
 
@@ -129,7 +135,9 @@ Find IP addresses that are often mentioned in association with the input entity.
 ### Email Addresses
 > Any &rarr; `maltego.EmailAddress`
 
-> Find related Email-Addresses
+> Find related Email Addresses
+
+Finds email addresses that are often mentioned in association with the input entity.
 
 ### Domains
 > Any &rarr; `maltego.Domain`
