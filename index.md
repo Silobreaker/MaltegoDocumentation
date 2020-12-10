@@ -51,51 +51,26 @@ All transforms described below will adhere to the following pattern:
 
 To the left of the arrow will be the input to the transform i.e., an entity on the canvas in Maltego. To the right of the arrow is the resulting entity type of the transform.
 
-## General Transforms
-
-These transforms are included with the _**Related General Entities**_ transform set.
-
-### Keyphrases
-
-> Any &rarr; `maltego.Phrase`
-
-> Find related Keyphrases
-
-Find phrases that are _keyphrases_ within Silobreaker. _Keyphrases_ in Silobreaker are words or phrases that are key to the content of the document. 
-
-![keyphrases](images/keyphrases.png)
-
-### Persons
-> Any &rarr; `maltego.Person`
-
-> Find related persons
-
-Returns people that are frequently mentioned in the same context as the input entity.
-
-### Companies
-> Any &rarr; `maltego.Company`
-
-> Find related companies
-
-Returns companies that are frequently mentioned in the same context as the input entity.
-
-### Organizations
-> Any &rarr; `maltego.Organization`
-
-> Find related organizations
-
-Returns organizations that are frequently mentioned in the same context as the input entity.
-
-### Products
-> Any &rarr; `silobreaker.Product`
-
-> Find related products
-
-Returns products that are frequently mentioned in the same context as the input entity.
-
 ## Cyber Transforms
 
 These transforms are included with the _**Related Cyber Entities**_ transform set.
+
+### ASNs
+> Any &rarr; `maltego.AS`
+
+> Finds Autonomous System Numbers strongly correlated with mentions of the input entity
+
+### Attack Types
+> Any &rarr; `maltego.Phrase`
+
+> Find related Attack Types, eg. 'Bootkit' or 'HTML-injection'
+
+This finds the Attack Types which are most frequently mentioned in association with the input entity.
+
+### Bitcoin Addresses
+> Any &rarr; `maltego.BTCAddress`
+
+> Finds Bitcoin Addresses strongly correlated with mentions of the input entity
 
 ### Credit Cards
 > Any &rarr; `silobreaker.CreditCard`
@@ -103,41 +78,6 @@ These transforms are included with the _**Related Cyber Entities**_ transform se
 > Find related credit cards
 
 Credit card numbers are automatically identified by Silobreaker and are usually found in CC dumps on paste sites.
-
-### IINs
-> Any &rarr; `silobreaker.IIN`
-
-> Find related Issuer Identification Number
-
-An IIN, issuer identification number, also often referred to as BIN - bank identiciation number. The IIN are the first 6 digits of a credit card and uniquely identifies card issuer and issuing bank. 
-
-### Hashtags
-> Any &rarr; `silobreaker.HashTag`
-
-> Find related #Hashtags
-
-Silobreaker automatically finds [hashtags](https://en.wikipedia.org/wiki/Hashtag) based on their formatting, `#example`. While these are usually hashtags on social media, such as twitter, they could be anything using the same formatting. For example IRC uses a hashtag format to identify #channel names.
-
-### Usernames
-> Any &rarr; `silobreaker.Username`
-
-> Find related @usernames
-
-Finds @usernames that are associated with the input entities. These are _usually_ Twitter-handles but can be from other services that use a similar naming system.
-
-### IPv4s
-> Any &rarr; `maltego.IPv4Address`
-
-> Find related IPv4-addresses
-
-Find IP addresses that are often mentioned in association with the input entity. This association is only based on mentions in documents and is not any type of look-up.
-
-### Email Addresses
-> Any &rarr; `maltego.EmailAddress`
-
-> Find related Email Addresses
-
-Finds email addresses that are often mentioned in association with the input entity.
 
 ### Domains
 > Any &rarr; `maltego.Domain`
@@ -151,60 +91,19 @@ Domains such as `facebook.com`, `silobreaker.se` or `plus.google.com` extracted 
 
 > Find related email domains
 
-A email domain is attached to an email address and differs from domain in that it is contextual and only extracted as part of extracting email address entities. 
+A email domain is attached to an email address and differs from domain in that it is contextual and only extracted as part of extracting email address entities.
 
-### URLs
-> Any &rarr; `maltego.URL`
+### Email Addresses
+> Any &rarr; `maltego.EmailAddress`
 
-> Finds related URLs. Includes the entire path mentioned
+> Find related Email Addresses
 
-E.g., `https://www.facebook.com/example/page` or `http://t.co/123456abc`.
+Finds email addresses that are often mentioned in association with the input entity.
 
-### Vulnerabilities
-> Any &rarr; `silobreaker.Vulnerability`
+### Forums
+> Any &rarr; `silobreaker.Forum`
 
-> Find Vulnerabilities listed by CVE identifier
-
-Silobreaker maintains a complete list known vulnerabilities that have been acknowledged and given a  [CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures) identifier. This transform finds the vulnerabilities that are the most related to your input entity.
-
-### Hashes
-> Any &rarr; `silobreaker.Hash`
-
-> Find related hashes
-
-Silobreaker automatically identifies strings that match the length and content of [MD5](https://en.wikipedia.org/wiki/MD5) or [SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithm). This transform finds the hashes that are the most related to the input entity.
-
-### Malware
-> Any &rarr; `silobreaker.Malware`
-
-> Find related malware, identified by their popularised name
-
-This returns known malware by their names, often given by the security company that discovers them. 
-
-![malware](images/malware.png)
-
-### Malicious IPs
-> Any &rarr; `maltego.IPv4Address`
-
-> Find IP addresses related to various malicious activity e.g., Malware or Threat Actors
-
-This will let you find IPs which are associated with different Threat Actors and Malware. They may not necessarily be _malicious_ IP addresses, but they will be associated with malicious activity.
-
-### Attack Types
-> Any &rarr; `maltego.Phrase`
-
-> Find related Attack Types, eg. 'Bootkit' or 'HTML-injection'
-
-This finds the Attack Types which are most frequently mentioned in association with the input entity.
-
-### Threat Actors
-> Any &rarr; `silobreaker.ThreatActor`
-
-> Find related Threat Actors
-
-Threat Actor is a person or a group of individuals that poses a cyber security threat, such as a hacktivist groups or state sponsored hackers. 
-
-  ![threat-actor](images/threatactors.png)
+> Finds Forums strongly correlated with mentions of the input entity
 
 ### Hacker Ops
 > Any &rarr; Any Silobreaker entity
@@ -213,9 +112,142 @@ Threat Actor is a person or a group of individuals that poses a cyber security t
 
 Hacker Operation or 'Ops' are joint efforts or rushes to attack specific targets; eg. [Operation Antisec](https://en.wikipedia.org/wiki/Operation_AntiSec). Silobreaker automatically identifies and tracks these Operations. This transform allows you to find operations that are related to the input entity.
 
+### Hashes
+> Any &rarr; `silobreaker.Hash`
+
+> Find related hashes
+
+Silobreaker automatically identifies strings that match the length and content of [MD5](https://en.wikipedia.org/wiki/MD5) or [SHA](https://en.wikipedia.org/wiki/Secure_Hash_Algorithm). This transform finds the hashes that are the most related to the input entity.
+
+### Hashtags
+> Any &rarr; `silobreaker.HashTag`
+
+> Find related #Hashtags
+
+Silobreaker automatically finds [hashtags](https://en.wikipedia.org/wiki/Hashtag) based on their formatting, `#example`. While these are usually hashtags on social media, such as twitter, they could be anything using the same formatting. For example IRC uses a hashtag format to identify #channel names.
+
+### IINs
+> Any &rarr; `silobreaker.IIN`
+
+> Find related Issuer Identification Number
+
+An IIN, issuer identification number, also often referred to as BIN - bank identiciation number. The IIN are the first 6 digits of a credit card and uniquely identifies card issuer and issuing bank.
+
+### IPv4s
+> Any &rarr; `maltego.IPv4Address`
+
+> Find related IPv4-addresses
+
+Find IP addresses that are often mentioned in association with the input entity. This association is only based on mentions in documents and is not any type of look-up.
+
+### Malicious IPs
+> Any &rarr; `maltego.IPv4Address`
+
+> Find IP addresses related to various malicious activity e.g., Malware or Threat Actors
+
+This will let you find IPs which are associated with different Threat Actors and Malware. They may not necessarily be _malicious_ IP addresses, but they will be associated with malicious activity.
+
+### Malware
+> Any &rarr; `silobreaker.Malware`
+
+> Find related malware, identified by their popularised name
+
+This returns known malware by their names, often given by the security company that discovers them.
+
+### Subdomains
+> `maltego.Domain` &rarr; `silobreaker.Subdomain`
+
+> Finds Subdomains strongly correlated with mentions of the input entity
+
+### Threat Actors
+> Any &rarr; `silobreaker.ThreatActor`
+
+> Find related Threat Actors
+
+Threat Actor is a person or a group of individuals that poses a cyber security threat, such as a hacktivist groups or state sponsored hackers.
+
+  ![threat-actor](images/threatactors.png)
+
+### URLs
+> Any &rarr; `maltego.URL`
+
+> Finds related URLs. Includes the entire path mentioned
+
+E.g., `https://www.facebook.com/example/page` or `http://t.co/123456abc`.
+
+### Usernames
+> Any &rarr; `silobreaker.Username`
+
+> Find related @usernames
+
+Finds @usernames that are associated with the input entities. These are _usually_ Twitter-handles but can be from other services that use a similar naming system.
+
+### Vulnerabilities
+> Any &rarr; `silobreaker.Vulnerability`
+
+> Find Vulnerabilities listed by CVE identifier
+
+Silobreaker maintains a complete list known vulnerabilities that have been acknowledged and given a  [CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures) identifier. This transform finds the vulnerabilities that are the most related to your input entity.
+
+![malware](images/malware.png)
+
+## General Transforms
+
+These transforms are included with the _**Related General Entities**_ transform set.
+
+### Companies
+> Any &rarr; `maltego.Company`
+
+> Find related companies
+
+Returns companies that are frequently mentioned in the same context as the input entity.
+
+### Keyphrases
+
+> Any &rarr; `maltego.Phrase`
+
+> Find related Keyphrases
+
+Find phrases that are _keyphrases_ within Silobreaker. _Keyphrases_ in Silobreaker are words or phrases that are key to the content of the document.
+
+### Organizations
+> Any &rarr; `maltego.Organization`
+
+> Find related organizations
+
+Returns organizations that are frequently mentioned in the same context as the input entity.
+
+![keyphrases](images/keyphrases.png)
+
+### Persons
+> Any &rarr; `maltego.Person`
+
+> Find related persons
+
+Returns people that are frequently mentioned in the same context as the input entity.
+
+### Products
+> Any &rarr; `silobreaker.Product`
+
+> Find related products
+
+Returns products that are frequently mentioned in the same context as the input entity.
+
 ## Geo[graphical] Transforms
 
 These transforms are included with the _**Related Geo Entities**_ transform set.
+
+### Cities
+> Any &rarr; `maltego.City`
+
+> Find related Cities
+
+Finds cities that are associated with the input entities. The relationship is based on the fact that the input entity and the cities are frequently mentioned in the same context, in the same documents - not necessarily any actual origin or location.
+
+### Continents
+> Any &rarr; `silobreaker.Continent`
+
+> Finds Continents strongly correlated with mentions of the input entity
 
 ### Countries
 > Any &rarr; `maltego.Country`
@@ -224,12 +256,10 @@ These transforms are included with the _**Related Geo Entities**_ transform set.
 
 Find countries that are associated with the input entities. These countries are not necessarily the countries the entities come from or where the story originated; the relationship only indicates that the input entity and the country are frequently mentioned in the same documents.
 
-### Cities
-> Any &rarr; `maltego.City`
+### Places
+> Any &rarr; `maltego.Location`
 
-> Find related Cities
-
-Finds cities that are associated with the input entities. The relationship is based on the fact that the input entity and the cities are frequently mentioned in the same context, in the same documents - not necessarily any actual origin or location.
+> Finds Places strongly correlated with mentions of the input entity
 
 ### Provinces
 > Any &rarr; `silobreaker.Province`
@@ -252,58 +282,14 @@ Finds regions that are associated with the input entities.
 
 Finds world regions that are associated with the input entities.
 
-## Search Transforms
-
-These transforms are included with the _**Search**_ transform set.
-
-### Matching Entities
-> Any &rarr; Any Silobreaker entity
-
-> Find matching SB entities.
-
-This special transform makes a general search to find Entities that match your
-input. The transform will only return Entities with a name or an alias that __match__ your input; it does
-__not__ return entities that are related or associated to it. You can also use this to
-pull entities from a list you have access to by prefixing the list name with
-"list:", e.g. to get entities from the list "CVE2014" you should name your input
-entity "list:CVE2014"
-
-### Related Entities
-> Any &rarr; Any Silobreaker entity
-
-> Find related Entities of any type
-
-Takes any type of entity as input and outputs the most related entities across all Silobreaker entity types.
-
-### Related Documents
-> Any &rarr; `silobreaker.Document`
-
-> Find related Documents
-
-Returns the documents that are the most related to your input. See [Document Info](#document-info) for more information about `silobreaker.Document` items.
-
-### Related Pastes
-> Any &rarr; `silobreaker.Document`
-
-> Find related Pastes
-
-Pastes are a category of documents in Silobreaker. This transform returns the pastes that are the most related to your input. See [Document Info](#document-info) for more information about `silobreaker.Document` items.
-
-### Related Publications
-> Any &rarr; `silobreaker.Publication`
-
-> Find related Publications
-
-Returns the Publications that are related to the input.
-
 ## Investigating Relations
 
-Also found in the _**Search**_ transform set, these transforms possess a more specific purpose in that they are used to investigate relationships between the nodes on the canvas. These transforms aim to answer the questions:
+Found in the _**Search**_ transform set, these transforms possess a more specific purpose in that they are used to investigate relationships between the nodes on the canvas. These transforms aim to answer the questions:
 
 * _Why did an earlier transform return this entity?_
 * _Where can I find the evidence for this relationship?_
 
-### Document Evidence For Link
+### Document Evidence for Link
 > Any Silobreaker entity &rarr; `silobreaker.Document`
 
 > Find document evidence for inbound link
@@ -346,5 +332,83 @@ The detail view provides you with general information e.g., _**Incoming**_ and _
 
 This transform will return paste documents in addition to the other documents that would otherwise be retrieved with [Document Evidence For Link](#document-evidence-for-link).
 
+## Search Transforms
+
+These transforms are also included with the _**Search**_ transform set.
+
+### Matching Entities
+> Any &rarr; Any Silobreaker entity
+
+> Find matching SB entities.
+
+This special transform makes a general search to find Entities that match your
+input. The transform will only return Entities with a name or an alias that __match__ your input; it does
+__not__ return entities that are related or associated to it. You can also use this to
+pull entities from a list you have access to by prefixing the list name with
+"list:", e.g. to get entities from the list "CVE2014" you should name your input
+entity "list:CVE2014"
+
+### Related Entities
+> Any &rarr; Any Silobreaker entity
+
+> Find related Entities of any type
+
+Takes any type of entity as input and outputs the most related entities across all Silobreaker entity types.
+
+### Related Publications
+> Any &rarr; `silobreaker.Publication`
+
+> Find related Publications
+
+Returns the Publications that are related to the input.
+
+### Search All Documents
+> Any &rarr; `silobreaker.Document`
+
+> Search Silobreaker for documents matching the query entered in the input entity
+
+### Search Analyst Notes
+> Any &rarr; `silobreaker.Document`
+
+> Search through Silobreaker Analyst notes for documents containing input entity
+
+### Search Chat Digests
+> Any &rarr; `silobreaker.Document`
+
+> Search Silobreaker for chat digest documents that mention the input entity
+
+### Search for Documents
+> Any &rarr; `silobreaker.Document`
+
+> Find related Documents
+
+Search Silobreaker for documents containing input entity, or documents similar to input entity if it is a Silobreaker document. See [Document Info](#document-info) for more information about `silobreaker.Document` items.
+
+### Search for Pastes
+> Any &rarr; `silobreaker.Document`
+
+> Find related Pastes
+
+Pastes are a category of documents in Silobreaker. This transform returns the pastes that are the most related to your input. See [Document Info](#document-info) for more information about `silobreaker.Document` items.
+
+### Search Forum Posts
+> Any &rarr; `silobreaker.Document`
+
+> Search Silobreaker for forum post documents that mention the input entity
+
+### Search News
+> Any &rarr; `silobreaker.Document`
+
+> Search Silobreaker for news documents that mention the input entity
+
+### Search Reports
+> Any &rarr; `silobreaker.Document`
+
+> Search Silobreaker for report documents that mention the input entity
+
+### Search Threat Publications
+> Any &rarr; `silobreaker.Publication`
+
+> Search for trending publications that are strongly correlated with mentions of the input entity
 ___
 [^1]: You must have a Silobreaker user account to view the user guide.
