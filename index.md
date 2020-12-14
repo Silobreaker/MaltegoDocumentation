@@ -207,12 +207,12 @@ These transforms are included with the _**Related General Entities**_ transform 
 
 Find phrases that are _keyphrases_ within Silobreaker. _Keyphrases_ in Silobreaker are words or phrases that are key to the content of the document.
 
+![keyphrases](images/keyphrases.png)
+
 ### Organizations
 > Any &rarr; `maltego.Organization`
 
 > Finds Organizations strongly correlated with mentions of the input entity
-
-![keyphrases](images/keyphrases.png)
 
 ### Persons
 > Any &rarr; `maltego.Person`
