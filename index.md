@@ -153,6 +153,8 @@ This transform will let you find any _currently trending_ IPs which are associat
 
 This returns known malware by their names, often given by the security company that discovers them.
 
+![malware](images/malware.png)
+
 ### Subdomains
 > `maltego.Domain` &rarr; `silobreaker.Subdomain`
 
@@ -165,7 +167,7 @@ This returns known malware by their names, often given by the security company t
 
 Threat Actor is a person or a group of individuals that poses a cyber security threat, such as a hacktivist groups or state sponsored hackers.
 
-  ![threat-actor](images/threatactors.png)
+![threat-actor](images/threatactors.png)
 
 ### URLs
 > Any &rarr; `maltego.URL`
@@ -187,8 +189,6 @@ Finds @usernames that are associated with the input entities. These are _usually
 > Finds Vulnerabilities strongly correlated with mentions of the input entity
 
 Silobreaker maintains a complete list known vulnerabilities that have been acknowledged and given a [CVE](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures) identifier. This transform finds the vulnerabilities that are the most related to your input entity.
-
-![malware](images/malware.png)
 
 ## General Transforms
 
