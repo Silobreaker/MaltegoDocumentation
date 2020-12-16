@@ -358,7 +358,7 @@ Carefully written by the analysts at Silobreaker, Analyst Notes are succinct rep
 ### Search Chat Digests
 > Any &rarr; `silobreaker.Document`
 
-> Search Silobreaker for chat digest documents that mention the input entity
+> Search Silobreaker for chat digest documents that mention the input entity. This transform is based on digests from our premium partners and requires subscriptions with them to work. Premium partners: Intel 471, Flashpoint.
 
 ### Search for Documents
 > Any &rarr; `silobreaker.Document`
@@ -377,7 +377,7 @@ Pastes are plain text content stored for the purpose of sharing e.g. source code
 ### Search Forum Posts
 > Any &rarr; `silobreaker.Document`
 
-> Search Silobreaker for forum post documents that mention the input entity
+> Search Silobreaker for forum post documents that mention the input entity. This transform is based on digests from our premium partners and requires subscriptions with them to work. Premium partners: Intel 471, Flashpoint.
 
 ### Search News
 > Any &rarr; `silobreaker.Document`
