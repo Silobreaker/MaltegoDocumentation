@@ -358,7 +358,9 @@ Carefully written by the analysts at Silobreaker, Analyst Notes are succinct rep
 ### Search Chat Digests
 > Any &rarr; `silobreaker.Document`
 
-> Search Silobreaker for chat digest documents that mention the input entity. This transform is based on digests from our premium partners and requires subscriptions with them to work. Premium partners: Intel 471, Flashpoint.
+> Search Silobreaker for chat digest documents that mention the input entity
+
+Chat digests are digest summaries based on various chatrooms and forums from the dark and surface web. We access this data through our premium partners and as such only users with subscriptions to these partners will be able to retrieve and view these documents in Silobreaker. Premium partners include: Intel 471, Flashpoint.
 
 ### Search for Documents
 > Any &rarr; `silobreaker.Document`
@@ -377,7 +379,9 @@ Pastes are plain text content stored for the purpose of sharing e.g. source code
 ### Search Forum Posts
 > Any &rarr; `silobreaker.Document`
 
-> Search Silobreaker for forum post documents that mention the input entity. This transform is based on digests from our premium partners and requires subscriptions with them to work. Premium partners: Intel 471, Flashpoint.
+> Search Silobreaker for forum post documents that mention the input entity
+
+Forum posts are digest summaries based on various chatrooms and forums from the dark and surface web. We access this data through our premium partners and as such only users with subscriptions to these partners will be able to retrieve and view these documents in Silobreaker. Premium partners include: Intel 471, Flashpoint.
 
 ### Search News
 > Any &rarr; `silobreaker.Document`
@@ -388,6 +392,8 @@ Pastes are plain text content stored for the purpose of sharing e.g. source code
 > Any &rarr; `silobreaker.Document`
 
 > Search Silobreaker for report documents that mention the input entity
+
+Reports in Silobreaker come from a multitude of sources, among them are our premium partners. Reports from these premium partners will not be reflected in the results of this transform if you are not subscribed to them. However, reports from other sources will still be returned.
 
 ### Search Threat Publications
 > Any &rarr; `silobreaker.Publication`
