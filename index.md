@@ -41,6 +41,34 @@ Some of our transforms use **lists** from Silobreaker. For these transforms to w
 ### Entities
 Installing Silobreaker transforms also includes a custom entity set. Our transforms can return both Maltego and Silobreaker entities depending on the transform being used. Maltego entities are used when the returned entity type exists in both Maltego and Silobreaker. Otherwise, a Silobreaker custom entity will be returned. In both cases the returned entity will have a Silobreaker icon. Visit our [user guide](https://my.silobreaker.com/Help-v2/basics/entities/#entity-types) to read more about our entities [^1].
 
+### Troubleshooting tips
+
+If you notice that you are missing transforms or that certain transforms don't seem to return any results then you might find it useful to reset your installation of the Silobreaker transform package. The four steps outlined below will effectively reset your installation. This also means any settings and the api key stored for these transforms will also need to be entered again.
+
+### Steps to reset Silobreaker installation
+
+* From the Maltego Transform Hub, uninstall Silobreaker
+
+    ![uninstall-silobreaker-hub-item](images/uninstall-silobreaker-hub-item.png)
+
+* Remove Silobreaker entities
+    * Navigate to the __Entity Manager__ from the __Entities__ tab on the ribbon menu at the top.
+    * Press on the small button to the right of the header row (when hovering it should read "Select Visible Columns") and select "Type" from the menu.
+    * Next enter "silobreaker." in the search bar to bring up all Silobreaker entities.
+    * Finally, select all and delete these.
+
+    ![silobreaker-entities-from-manager](images/silobreaker-entities-from-manager.png)
+
+    <sub>Don't worry about losing these entities! You will get them back in the final step.</sub>
+
+* _Optional step for removing Silobreaker transform sets_
+    * Navigate to the __Transform Manager__ from the __Transforms__ tab on the ribbon menu at the top.
+    * Select and delete the Silobreaker transform sets.
+
+    ![remove-silobreaker-transform-sets](images/remove-silobreaker-transform-sets.png)
+
+* Navigate back to the Maltego Transform Hub and reinstall the Silobreaker Hub item. This will perform a fresh install of the Silobreaker transform package which includes our transform sets, custom entities and icons.
+
 ### Association/Relation Transforms
 
 Silobreaker indexes millions of documents and searches these to find mentions of _entities_. Our Maltego transforms use our API to find entities that are related to your input. An entity is _related_ to (or associated with) another when mentioned in the same context. If you need more information about how a relation is extracted you can [investigate it](#investigating-relations).
@@ -368,6 +396,13 @@ Chat digests are digest summaries based on various chatrooms and forums from the
 > Search Silobreaker for documents (pastes excluded) that mention the input entity
 
 Search Silobreaker for documents containing input entity, or documents similar to input entity if it is a Silobreaker document. See [Document Info](#document-info) for more information about `silobreaker.Document` items.
+
+### Search for Documents from Threat Publications
+> Any &rarr; `silobreaker.Document`
+
+> Search Silobreaker for documents published by cyber security sources that mention the input entity
+
+Silobreaker maintains a list of trusted cybersecurity sources - called "Threat Publications" - that analysts can use while monitoring specific entities or items of interest. This transform retrieves documents that have been published by these sources and mention the input entity. You can learn more about our list of "Threat Publications" and which of them are trending via the [Search Threat Publications](#search-threat-publications) transform.
 
 ### Search for Pastes
 > Any &rarr; `silobreaker.Document`
