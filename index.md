@@ -15,7 +15,7 @@ About Silobreaker
 Acquisition and Installation
 ----------
 
-If you wish to receive a demo or contact our sales team, please see our [contact information](http://www.silobreaker.com/contact-us/).
+If you wish to receive a demo or contact our sales team, please see our [contact information](https://www.silobreaker.com/company/contact/).
 
 If you have a license that includes Maltego access, Silobreaker will provide the API-keys for you to use.
 
