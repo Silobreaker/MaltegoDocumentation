@@ -26,9 +26,9 @@ If you have a license that includes Maltego access, Silobreaker will provide the
 3. Press the `[INSTALL]` button.
 4. Navigate through the short installation process.
 5. Still on the _Transform Hub_, press the now displayed `settings`-button for Silobreaker.
-6. This will show a dialog where you will have to paste your own API key.   
+6. This will show a dialog where you will have to paste your own API key.
 7. You're now ready to use all of the Silobreaker transforms.
-  
+
 # Using the Silobreaker Transforms in Maltego
 
 ### Pre-requisites
@@ -79,6 +79,30 @@ All transforms described below will adhere to the following pattern:
 > Transform description as written in Maltego
 
 To the left of the arrow will be the input to the transform i.e., an entity on the canvas in Maltego. To the right of the arrow is the resulting entity type of the transform.
+
+### Transform Settings
+
+Many of the Silobreaker Maltego transforms can be configured with settings that enable you to provide additional criteria or filters when searching for entities and documents in Silobreaker. They will usually appear as pop-ups in Maltego when you click to run a transform. You can always disable or remember settings by clicking on the "Configure" button available on every transform in the Run View.
+
+#### Date Ranges
+
+> Date Range
+
+The Date Range setting can be used to retrieve documents that were published within the time frame that is specified by the setting.
+
+![date-ranges](images/date-ranges.png)
+
+#### Document Language
+
+> Document language e.g. English, Russian
+
+The Document Language setting simply allows you to see _only_ those documents which are written in the specified language. By default, Silobreaker will search across all languages that are available to your user account. This setting can be applied to most [Search](#search-transforms) and [Evidence](#investigating-relations) transforms.
+
+#### Intitle
+
+> Search only for results with current entity contained in title?
+
+The Intitle setting allows you to search for documents containing an entity within the document's title. When used with the [Evidence](#document-evidence-for-link) transforms, the resulting query will return _only_ documents with mentions of the input entity as well as any of the "parent" entities in their titles (or at the very beginning of the text). Intitle will be avilable to any transform that returns a `silobreaker.Document`.
 
 ## Cyber Transforms
 
@@ -188,6 +212,11 @@ This returns known malware by their names, often given by the security company t
 
 > Finds Subdomains strongly correlated with mentions of the input entity
 
+### Software
+> Any &rarr; `silobreaker.Software`
+
+> Finds Software strongly correlated with mentions of the input entity
+
 ### Threat Actors
 > Any &rarr; `silobreaker.ThreatActor`
 
@@ -227,6 +256,21 @@ These transforms are included with the _**Related General Entities**_ transform 
 
 > Finds Companies strongly correlated with mentions of the input entity
 
+### Events
+> Any &rarr; `maltego.Event`
+
+> Finds Events strongly correlated with mentions of the input entity
+
+### Government Bodies
+> Any &rarr; `silobreaker.GovernmentBody`
+
+> Finds Government Bodies strongly correlated with mentions of the input entity
+
+### Incidents
+> Any &rarr; `maltego.Incident`
+
+> Finds Incidents strongly correlated with mentions of the input entity
+
 ### Keyphrases
 
 > Any &rarr; `maltego.Phrase`
@@ -236,6 +280,11 @@ These transforms are included with the _**Related General Entities**_ transform 
 Find phrases that are _keyphrases_ within Silobreaker. _Keyphrases_ in Silobreaker are words or phrases that are key to the content of the document.
 
 ![keyphrases](images/keyphrases.png)
+
+### Military Equipment
+> Any &rarr; `silobreaker.MilitaryEquipment`
+
+> Finds Military Equipment strongly correlated with mentions of the input entity
 
 ### Organizations
 > Any &rarr; `maltego.Organization`
@@ -251,6 +300,11 @@ Find phrases that are _keyphrases_ within Silobreaker. _Keyphrases_ in Silobreak
 > Any &rarr; `silobreaker.Product`
 
 > Finds Products strongly correlated with mentions of the input entity
+
+### Violent Groups
+> Any &rarr; `silobreaker.ViolentGroup`
+
+> Finds Violent Groups strongly correlated with mentions of the input entity
 
 ## Geo[graphical] Transforms
 
@@ -310,14 +364,14 @@ This special transform is used to investigate relations. If you have used any of
 1. Insert an entity and use any of the Silobreaker entity transforms to find related entities.
 
     ![companies](images/companies.png)
-  
+
     <sub>_**[SB] Companies** used on **Derusbi**_.</sub>
 
 2. On any of the generated child nodes, perform the _[SB] Document Evidence For Link_ transform.
 3. The children that are generated are `silobreaker.Document` items.
 
     ![document-evidence-for-links](images/documentevidenceforlink.png)
-  
+
     <sub>_These are the original documents where the relationship between **Derusbi** and **Cisco Systems Inc** is established._</sub>
 
 #### Document Info
@@ -332,7 +386,7 @@ The detail view provides you with general information e.g., _**Incoming**_ and _
 
 * Headline - This is the headline as written in the original document. Clicking on the headline will open a new tab in your web browser to the document in Silobreaker.
 * Publisher and publication date - This line contains the document's original publisher as well as when the document was published. Clicking on this line will open a new tab to the original published source.
-* Document teaser - The first few lines from the document.
+* Document text - The text body of the document itself. This text may be truncated to save space in some cases.
 
 ### Document Evidence for Link including Pastes
 > Any Silobreaker entity &rarr; `silobreaker.Document`
